@@ -16,7 +16,7 @@ const data = {type, input}
 
 const getImage = new Promise((resolve, reject) => {
     setLoading(true)
-    axios.post('http://localhost:4999/getQR', data).then((res) => {
+    axios.post('https://aqueous-eyrie-72537.herokuapp.com/getQR', data).then((res) => {
         setQr(prevValue => {
             return delete prevValue.url
             

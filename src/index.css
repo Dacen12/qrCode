@@ -86,7 +86,7 @@ body{
 }
 
 .display-wrapper{
-    background: lightcoral;
+    
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 100%;

@@ -29,7 +29,6 @@ const getImage = new Promise((resolve, reject) => {
 getImage.then((res) => {
     setLoading(false)
     setQr(prevValue => {
-       
         return res
     })
 })

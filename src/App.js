@@ -4,18 +4,28 @@ import Message from './Components/Message';
 import Mail from './Components/Mail';
 import Sms from './Components/Sms';
 import staticqr from './assets/Image/default.png'
-import staticVcard from './assets/id-card.png'
-import message from './assets/iconsms.png'
-import at from './assets/at.png'
-import sms from './assets/sms.png'
+import download from './assets/download.png'
+import axios from 'axios'
+import {saveAs} from 'file-saver'
 import './index.css'
 
 
 
 function App() {
     const [clicked, setClicked] = useState('')
-    const [qr, setQr] = useState()
+    const [qr, setQr] = useState({})
     
+
+
+const downloadImage= () => {
+  if(qr){
+    saveAs(qr.url, qr.id)
+  }
+  
+}
+
+
+
 
     const switchComponents = () => {
       switch(clicked){
@@ -42,33 +52,36 @@ function App() {
   return (
     <div className="wrapper">
       <div className="qr-wrapper">
-      
+      <div className="model">
       <div className="display">
+     
         <div className="qr-box">
-        <img src={qr ? qr : staticqr} />
+        <img  draggable={false} src={qr.url ? qr.url : staticqr} />
         </div> 
 
         <div className="option-boxes">
 
-        <span onClick={() => setClicked('vcard')} className="vcard options-st">
-        <img className="img-st" src={staticVcard}/>
-          <span className="span-st">Vcard</span>
+        <span onClick={() => setClicked('vcard')} className=" hover vcard options-st">
+        
+          <span className=" card-effect card-font">
+            Vcard
+          </span>
         </span>
 
 
-      <span onClick={() => setClicked('message')}  className="message options-st">
-        <img src={message} className="img-st" />
-        <span className="span-st">Bericht / Link</span>
+      <span onClick={() => setClicked('message')}  className=" hover message options-st">
+        
+        <span className=" card-effect card-font">Bericht / Link</span>
       </span>
 
-    <span onClick={() => setClicked('email')}  className="email options-st">
-      <img className="img-st" src={at} />
-      <span className="span-st">Email</span>
+    <span onClick={() => setClicked('email')}  className=" hover email options-st">
+      
+      <span className=" card-font card-effect">Email</span>
     </span>
        
-    <span onClick={() => setClicked('sms')}  className="sms options-st">
-        <img src={sms} className="img-st" />
-        <span className="span-st">SMS</span>
+    <span onClick={() => setClicked('sms')}  className=" hover sms options-st">
+        
+        <span className=" card-effect card-font">SMS</span>
       </span>
         </div>
       </div>
@@ -77,7 +90,8 @@ function App() {
       <div className="form-wrapper">
       {switchComponents()}
       </div>
-      
+      <button className="download-button card-font" onClick={() => downloadImage()}  >Download</button>
+      </div>
       </div>      
    
     </div>

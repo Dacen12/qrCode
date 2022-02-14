@@ -13,16 +13,17 @@ const getInput = (e) => {
 const formSubmit = (e) => {
 e.preventDefault()
 
-const data = {
+
+    const data = {
     type,
     input
 }
 
  axios.post('http://localhost:4999/getQR', data).then((res) => {
-
      setQr(res.data)
-     
  })
+
+
 }
 
 return [getInput, input, formSubmit]

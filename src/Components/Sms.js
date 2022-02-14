@@ -10,7 +10,7 @@ function Sms({setQRCode}) {
 <form onSubmit={e => formSubmit(e)}>
 <div className="full-column">
     <input value={input.number} name="number" onChange={(e) => getInput(e)} type="text" className="input-form" placeholder="Mobiele nummer" />
-    <input value={input.body} name="body" onChange={(e) => getInput(e)} type="text" className="input-form" placeholder="Onderwerp" />
+    <textarea value={input.body} name="body" onChange={(e) => getInput(e)} type="text" className="input-form" placeholder="Bericht" />
 </div>
 
 <div className="full-column">

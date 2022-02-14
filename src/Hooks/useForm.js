@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-export default function useForm(type, setQr) {
+export default function useForm(type, setQr, setLoading) {
 const [input, setInput] = useState({})
 const getInput = (e) => {
     const {name, value} = e.target
@@ -12,20 +12,32 @@ const getInput = (e) => {
 
 const formSubmit = (e) => {
 e.preventDefault()
+const data = {type, input}
 
+const getImage = new Promise((resolve, reject) => {
+    setLoading(true)
+    axios.post('http://localhost:4999/getQR', data).then((res) => {
+        setQr(prevValue => {
+            return delete prevValue.url
+            
+        })
+    resolve(res.data)
 
-    const data = {
-    type,
-    input
-}
+}).catch((err) => reject(err))
+})
 
- axios.post('http://localhost:4999/getQR', data).then((res) => {
-     setQr(res.data)
- })
-
+getImage.then((res) => {
+    setLoading(false)
+    setQr(prevValue => {
+       
+        return res
+    })
+})
 
 }
 
 return [getInput, input, formSubmit]
 
 }
+
+

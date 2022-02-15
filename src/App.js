@@ -100,7 +100,7 @@ function App() {
 
         </div>
       
-      <div className="display-wrapper">
+        <div className="display-wrapper">
         
         <div className="display">
           

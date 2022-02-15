@@ -2,6 +2,9 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 export default function useForm(type, setQr, setLoading) {
 const [input, setInput] = useState({})
+
+
+
 const getInput = (e) => {
     const {name, value} = e.target
     setInput({
@@ -12,11 +15,14 @@ const getInput = (e) => {
 
 const formSubmit = (e) => {
 e.preventDefault()
+
 const data = {type, input}
+
+console.log(type, data)
 
 const getImage = new Promise((resolve, reject) => {
     setLoading(true)
-    axios.post('https://aqueous-eyrie-72537.herokuapp.com/getQR', data).then((res) => {
+    axios.post('https://aqueous-eyrie-72537.herokuapp.com/', data).then((res) => {
         setQr(prevValue => {
             return delete prevValue.url
             

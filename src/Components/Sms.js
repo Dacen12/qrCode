@@ -1,13 +1,14 @@
 import React from 'react'
 import useForm from '../Hooks/useForm'
 
-function Sms({setQRCode, loader}) {
+function Sms({setQRCode, loader, scroller}) {
   const {setLoading} = loader
   const {setQr} = setQRCode
-  const [getInput, input, formSubmit] = useForm('sms', setQr, setLoading)
+  const {scrollToQrCode} = scroller
+  const [getInput, input, formSubmit] = useForm('sms', setQr, setLoading, scrollToQrCode)
 
   return (
-    <div className="sms-component">
+    <div className="sms-component mb-sms-full-column">
 <form onSubmit={e => formSubmit(e)}>
 <div className="full-column">
     <input required value={input.number} name="number" onChange={(e) => getInput(e)} type="text" className="input-form" placeholder="Mobiele nummer" />
@@ -15,7 +16,7 @@ function Sms({setQRCode, loader}) {
 </div>
 
 <div className="full-column">
-    <input type="submit" className="button-column width-button" value='Sms genereren' />
+    <input type="submit" className="button-column width-button generate-button" value='Sms genereren' />
 </div>
 </form>
     </div>

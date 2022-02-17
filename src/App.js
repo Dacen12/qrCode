@@ -3,7 +3,7 @@ import Vcard from './Components/Vcard';
 import Message from './Components/Message';
 import Mail from './Components/Mail';
 import Sms from './Components/Sms';
-import staticqr from './assets/Image/default.png'
+import staticqr from './assets/staticqr_code.png'
 import Options from './Views/Options';
 import { saveAs } from 'file-saver';
 import buffer from './assets/buffer.gif'

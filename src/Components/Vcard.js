@@ -1,12 +1,13 @@
 import React from 'react'
-import axios from 'axios'
 import useForm from '../Hooks/useForm'
+
 function Vcard({setQRCode, loader, scroller}) {
     const {setLoading} = loader
     const {setQr} = setQRCode
     const {scrollToQrCode} = scroller
     const [getInput, input, formSubmit] = useForm('vcard', setQr, setLoading, scrollToQrCode)
-
+    
+    
   return (
     <div className="vcard-component">
         <form onSubmit={e => formSubmit(e)}>

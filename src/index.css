@@ -16,10 +16,375 @@
 }
 
 body{
-    background: rgb(255, 255, 255);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
-@media only screen and (max-width: 1300px){
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  
+
+
+.wrapper{
+    background: rgb(100,17,173);
+    background: linear-gradient(90deg, rgba(100,17,173,1) 17%, rgba(16,0,43,1) 98%); 
+    width: 100%;
+    min-width: 100%;
+    height: 90vh;
+    height: 50rem;
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.qr-wrapper{
+   width: 100%;
+   max-width: 90%;
+   max-height: 95%;
+   max-width: 95%;
+   height: 100%;
+   background: linear-gradient(90deg, #7109b79c 17%, rgba(16,0,43,1) 98%); 
+   border-radius: 10px;
+   border: 3px solid white;
+   display: grid;
+   grid-template-columns: 50% 50%;
+   grid-template-rows: 100%;
+   justify-items: center;
+}
+
+.model{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 20% 70%;
+    width: 95%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 1rem;
+   
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 20% 70%;    
+}
+
+.option-boxes{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 30% 20% 20%;
+  grid-template-rows: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+.options-st{
+    width: 100%;
+    height: 60%;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.479);
+}
+.hover{
+    transition:  0.2s ease-in;
+}
+
+.set-selected-option{
+    border-radius: 10px;
+    color: black;
+    background: white;
+}
+
+.hover:hover{
+    
+    border-radius: 10px;
+    color: black;
+    background: rgb(165, 165, 165);
+}
+
+.card-info{
+    width: 95%;
+    align-self: center;
+    border-radius: 10px;
+    border: 3px solid white;
+    max-height: 6rem;
+    font-family: sans-serif;
+    color: white;
+    cursor: default;
+    justify-self: center;
+}
+
+.card-info legend{
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+}
+
+.info-text{
+   padding: 10px;
+}
+
+.form-wrapper{
+    
+    justify-self: center;
+    width: 95%;
+}
+
+
+.vcard-component{
+ display: grid;
+ grid-template-columns: 100%;
+ grid-template-rows: repeat(7, 12%);
+ width: 100%;
+ height: 100%;
+
+ 
+}
+
+.message-component{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+}
+
+.email-component{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 50%);
+    justify-content: center;
+}
+
+
+
+.display{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+   
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+}
+
+
+
+.display-wrapper{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+}
+
+.qr-box{
+    width: 100%;
+    height: 100%;
+    max-width: 85%;
+    height: 100%;
+    max-height: 100%;
+    max-height: 20rem;
+    background: yellow;
+    border: 0.3rem solid #d8bbff;
+    border-radius: 1rem;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: white;
+    margin-top: 1rem; /*Change this to 0px in media query*/
+}
+
+.qr-box img{
+   max-width: 20rem;
+   max-height: 20rem;
+  justify-self: center;
+   
+}
+
+
+.user-options{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+}
+
+
+.user-options > :nth-child(1){
+   max-width: 30rem;
+}
+.user-options > :nth-child(2){
+    height: 100%;
+    max-height: 3rem;
+    width: 100%;
+    max-width: 30rem;
+    align-self: center;
+}
+.message{
+     
+     
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1045px){
+    .column-wrapper{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
+        justify-content: space-evenly;
+    }
+    .input-form{
+        width: 100%;
+        max-height: 2.5rem;
+        min-height: 2.5rem;
+        max-width: 90%;
+        min-width: 90%;
+        align-self: center;
+        justify-self: center;
+        border: none;
+        border-radius: 5pt;
+        text-indent: 1rem;
+        background: #dabfff;
+        outline: none;
+    }
+
+    .full-column .input-form{
+        width: 100%;
+        max-width: 95%;
+    }
+
+   .vcard-component .full-column{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .email-component .full-column{
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .message-component .full-column{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+   
+    .button-column{
+        width: 100%;
+        height: 100%;
+        max-height: 2.5rem;
+        min-height: 2.5rem;
+        max-width: 95%;
+        border: none;
+        border-radius: 5pt;
+        align-self: center;
+        justify-self: center;
+        color: white;
+        background: green;
+    }
+    .button-column:hover{
+        background: rgb(1, 170, 1);
+    }
+
+
+    .sms-component{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 50%);
+    }
+
+    .sms-component .full-column{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+
+    .scaledown{
+        animation: scaledown 0.2s ease-in forwards;
+    
+    }
+    
+    .scaleup{
+        animation: scaleup 0.2s ease-in forwards;
+    }
+    
+    @keyframes scaledown {
+        0%{
+            transform: scale(0.9);
+        }
+        40%{
+            transform: scale(0.4);
+        }
+        70%{
+            transform: scale(0.6);
+        }
+        100%{
+            transform: scale(0.55);
+        }
+    }
+    
+    @keyframes scaleup {
+        0%{
+            transform: scale(0.5);
+        }
+     
+        70%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(0.9);
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 1044px){
 
 
     .body{
@@ -31,7 +396,8 @@ body{
         background: linear-gradient(90deg, rgba(100,17,173,1) 17%, rgba(16,0,43,1) 98%); 
         width: 100%;
         height: 74rem;
-      
+        margin-top: 0px;
+        display: block;
         /* change min height to actual value */
     }
 
@@ -86,16 +452,15 @@ body{
         display: flex;
         width: 95%;
         height: 95vh;
-      
         max-height: 69rem;
         min-height: 69rem;
         position: relative;
         background: linear-gradient(90deg, #7109b79c 17%, rgba(16,0,43,1) 98%); 
-        
         border-radius: 10px;
         left: 0.7rem;
         top: 0.5rem;
         flex-direction: column-reverse;
+        border: none;
        
     }
     .display-wrapper{
@@ -103,6 +468,7 @@ body{
         height: 100%;
         min-height: 20rem;
         max-height: 20rem;
+        display: block;
        
     }
 
@@ -111,6 +477,9 @@ body{
         height: 100%;
         display: flex;
         justify-content: center;
+        border: none;
+        background: none;
+       
     }
 
     .qr-box{
@@ -120,6 +489,7 @@ body{
       display: flex;
       justify-content: center;
       border-radius: 20px;
+      margin-top: 0rem;
     }
 
     .qr-box img{
@@ -127,7 +497,7 @@ body{
         height: 100%;
         align-self: center;
         border-radius: inherit;
-        
+        display: block;
     }
 
         /* Model */
@@ -135,12 +505,13 @@ body{
     .model{
         width: 100%;
         height: 100%;
-      
+        padding: 0px;
         padding-bottom: 10px;
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 7rem 7rem 34rem auto; 
         max-height: fit-content;
+        background: none;
     }
 
    
@@ -169,24 +540,22 @@ body{
     .option-boxes{
       width: 100%;
       height: 50px;
-
       display: grid;
-      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-columns: 20% 20% 20% 20%;
       grid-template-rows: 100%;
       align-self: center;
+      justify-self: center; 
+      justify-content: space-evenly;
     }
     
     .options-st{
         width: 100%;
         height: 100%;
-     
         display: flex;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
+        
         cursor: pointer;
-        color: White;
-       
+        
+        
         font-family: sans-serif;
     }
 
@@ -227,6 +596,13 @@ body{
             /* height: fit-content;    */
          
      }
+     .vcard-component .column-wrapper{
+        max-height: inherit;
+        min-height: inherit;
+         width: 100%;
+        
+     }
+     
     .vcard-component .input-form{
         height: 100%;
         min-height: 3rem;

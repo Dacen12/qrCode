@@ -39,7 +39,7 @@ function Vcard({setQRCode, loader, scroller}) {
         </div>
 
         <div className="full-column">
-            <input  required value={input.website} name="website" onChange={(e) => getInput(e)} type="text" placeholder='www.jouwwebsite.com' className="input-form" />
+            <input  value={input.website} name="website" onChange={(e) => getInput(e)} type="text" placeholder='www.jouwwebsite.com' className="input-form" />
         </div>
 
         <div className="full-column">

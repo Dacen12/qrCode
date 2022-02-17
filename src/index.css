@@ -253,7 +253,7 @@ body{
 
 
 
-
+/* Added these css selectors in a media query because it'll conflict with phone responsiveness */
 @media only screen and (min-width: 1045px){
     .column-wrapper{
         width: 100%;

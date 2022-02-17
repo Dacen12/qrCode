@@ -21,24 +21,21 @@ function App() {
   const scroller = useRef()
   const scrollToQrCode = () => scroller.current.scrollIntoView()
 
-  useEffect(() => {
-    console.log(qr)
-  }, [qr.url])
+  
 
   const checkImageSource = () => { 
 
     if(loading === true && !qr.url){
-      console.log('loading === true and !qr')
+     
       return <img className={`${effector.smallImage ? ('scaledown') : ('scaleup') }`} draggable={false} src={buffer} />
     } else if (loading === true && qr.url){
-      console.log('loading === true and qr')
+     
      return  <img className={`${effector.smallImage ? ('scaledown') : ('scaleup') }`} draggable={false} src={buffer} />
     } else if(loading === false && qr.url){
-      console.log('loading === false and qr')
      return <img className={`${effector.smallImage ? ('scaledown') : ('scaleup') }`} draggable={false} src={qr.url} />
     } else { 
       // (loading === false && !qr.url)
-      console.log('loading === false and !qr')
+      
       return <img className={`${effector.smallImage ? ('scaledown') : ('scaleup') }`} draggable={false} src={staticqr} />
     }
 
@@ -83,7 +80,7 @@ function App() {
         
         <div className="model">
     
-          <Options setClickAction={{setClicked}} />
+          <Options setClickAction={{clicked ,setClicked}} />
           <fieldset className="card-info">
             <legend>{clicked}</legend>
               <Info infotext={{clicked}} />
@@ -99,7 +96,7 @@ function App() {
         <div ref={scroller} className="display">
           
           <div className="qr-box">
-            {/* <img className={`${effector.smallImage ? ('scaledown') : ('scaleup') }`} draggable={false} src={qr.url ? qr.url : staticqr} /> */}
+           
            {checkImageSource()}
           </div>
           <div className="user-options">
@@ -118,7 +115,7 @@ function App() {
 
 
 {/* Mobile only! */}
-{qr.url && (<span className="sticky-download"> <span></span></span>)}
+{qr.url && (<span onClick={downloadImage} className="sticky-download"> <span></span></span>)}
     </div>
   );
 }

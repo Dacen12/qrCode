@@ -121,7 +121,7 @@ function App() {
 
 
 {/* Mobile only! */}
-{qr.url && (<span className="sticky-download"> <span></span></span>)}
+{qr.url && (<span onClick={downloadImage()} className="sticky-download"> <span></span></span>)}
     </div>
   );
 }

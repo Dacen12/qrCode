@@ -22,7 +22,7 @@ function Vcard({setQRCode, loader, scroller}) {
         </div>
 
         <div className="full-column">
-            <input  required value={input.company} name="company" onChange={(e) => getInput(e)} placeholder='Bedrijfsnaam' type="text" className="input-form" /> 
+            <input value={input.company} name="company" onChange={(e) => getInput(e)} placeholder='Bedrijfsnaam' type="text" className="input-form" /> 
         </div>
 
         <div className="full-column">
